@@ -1,0 +1,232 @@
+.scheme-card {
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.scheme-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--gray-200);
+}
+
+.scheme-ribbon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--saffron);
+  color: var(--navy);
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+.scheme-card-header {
+  padding: 16px 16px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.scheme-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.scheme-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 2px;
+}
+
+.scheme-category {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.scheme-match {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.match-bar {
+  width: 60px;
+  height: 4px;
+  background: var(--gray-100);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.match-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 2px;
+  transition: width 0.8s ease;
+}
+
+.scheme-card-body {
+  padding: 14px 16px;
+  flex: 1;
+}
+
+.scheme-name {
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 5px;
+}
+
+.scheme-ministry {
+  font-size: 12px;
+  color: var(--gray-400);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.scheme-application-dates {
+  font-size: 12px;
+  color: var(--green);
+  font-weight: 600;
+  margin-bottom: 8px;
+  background: rgba(46, 125, 50, 0.08);
+  padding: 6px 8px;
+  border-radius: 4px;
+  border-left: 3px solid var(--green);
+}
+
+.scheme-desc {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.scheme-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.reason-tag {
+  background: var(--green-light);
+  color: var(--green);
+  font-size: 11px;
+  font-family: var(--font-main);
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.scheme-card-footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--gray-100);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-save {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.btn-save:hover {
+  background: var(--gray-200);
+  transform: scale(1.05);
+}
+
+.btn-save.saved {
+  background: #fff3cd;
+  border-color: #ffc107;
+}
+
+/* Compact version */
+.scheme-card.compact .scheme-card-header { padding: 12px; }
+.scheme-card.compact .scheme-card-body { padding: 10px 12px; }
+.scheme-card.compact .scheme-card-footer { padding: 10px 12px; }
+.scheme-card.compact .scheme-name { font-size: 13.5px; }
+.scheme-card.compact .scheme-icon { width: 36px; height: 36px; font-size: 18px; }
+
+/* Schemes starting applications today - Priority highlight */
+.scheme-card.starting-today {
+  border: 2px solid #d32f2f;
+  background: linear-gradient(135deg, #fff5f5 0%, white 100%);
+  box-shadow: 0 0 12px rgba(211, 47, 47, 0.15);
+}
+
+.scheme-card.starting-today:hover {
+  box-shadow: 0 0 16px rgba(211, 47, 47, 0.25);
+}
+
+.starting-today-ribbon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+  color: white;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.95;
+  }
+}

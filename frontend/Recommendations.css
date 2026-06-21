@@ -1,0 +1,162 @@
+.reco-page { min-height: 100vh; }
+
+.reco-header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  padding: 36px 0 40px;
+}
+
+.reco-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.reco-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  letter-spacing: 0.3px;
+}
+
+.reco-header h1 {
+  font-family: var(--font-main);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.highlight-name { color: var(--saffron); }
+
+.reco-header p {
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+}
+
+.reco-header p strong { color: rgba(255,255,255,0.85); }
+
+.reco-count-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius);
+  padding: 20px 28px;
+  text-align: center;
+  min-width: 160px;
+}
+
+.count-big {
+  font-family: var(--font-main);
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--saffron);
+  line-height: 1;
+}
+
+.count-label {
+  color: rgba(255,255,255,0.65);
+  font-size: 12px;
+  font-family: var(--font-main);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.reco-body { padding: 28px 24px 48px; }
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.filter-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 24px;
+  background: white;
+  border: 1.5px solid var(--gray-200);
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: capitalize;
+}
+
+.filter-tab:hover { border-color: var(--sky); color: var(--sky); }
+
+.filter-tab.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.tab-count {
+  background: rgba(255,255,255,0.2);
+  color: inherit;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.filter-tab:not(.active) .tab-count {
+  background: var(--gray-100);
+  color: var(--gray-400);
+}
+
+.schemes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.loading-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.skeleton-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px solid var(--gray-200);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.empty-icon { font-size: 60px; margin-bottom: 16px; }
+
+.empty-state h3 {
+  font-family: var(--font-main);
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: var(--gray-400);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  .reco-hero { flex-direction: column; align-items: flex-start; }
+  .reco-count-card { width: 100%; }
+}
